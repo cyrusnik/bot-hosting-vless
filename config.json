@@ -12,7 +12,7 @@
       "users": [
         {
           "name": "qwen-user",
-          "uuid": "23a1ede4-696c-4059-8452-389c0c5f96a1"
+          "uuid": "fc18e54f-cab9-4637-b60f-2b53ca55f76e"
         }
       ],
       "transport": {
@@ -20,22 +20,6 @@
         "path": "/assets/js/chunk-vendors.js",
         "max_early_data": 2048,
         "early_data_header_name": "Sec-WebSocket-Protocol"
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "vless-httpupgrade-in",
-      "listen": "127.0.0.1",
-      "listen_port": 8081,
-      "users": [
-        {
-          "name": "qwen-user",
-          "uuid": "23a1ede4-696c-4059-8452-389c0c5f96a1"
-        }
-      ],
-      "transport": {
-        "type": "httpupgrade",
-        "path": "/assets/js/chunk-vendors.js"
       }
     }
   ],
