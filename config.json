@@ -1,21 +1,41 @@
 {
   "log": {
-    "level": "info"
+    "level": "info",
+    "timestamp": true
   },
   "inbounds": [
     {
       "type": "vless",
-      "tag": "vless-in",
+      "tag": "vless-ws-in",
       "listen": "127.0.0.1",
       "listen_port": 8080,
       "users": [
         {
-          "uuid": "你的uuid"
+          "name": "qwen-user",
+          "uuid": "23a1ede4-696c-4059-8452-389c0c5f96a1"
         }
       ],
       "transport": {
         "type": "ws",
-        "path": "/vless-ws"
+        "path": "/assets/js/chunk-vendors.js",
+        "max_early_data": 2048,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "vless-httpupgrade-in",
+      "listen": "127.0.0.1",
+      "listen_port": 8081,
+      "users": [
+        {
+          "name": "qwen-user",
+          "uuid": "23a1ede4-696c-4059-8452-389c0c5f96a1"
+        }
+      ],
+      "transport": {
+        "type": "httpupgrade",
+        "path": "/assets/js/chunk-vendors.js"
       }
     }
   ],
@@ -23,6 +43,13 @@
     {
       "type": "direct",
       "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
     }
-  ]
+  ],
+  "route": {
+    "final": "direct"
+  }
 }
